@@ -10,7 +10,7 @@
 Counterparts to R string manipulation functions that account for the effects of
 ANSI text formatting control sequences.
 
-## Formatting String with Control Sequences
+## Formatting Strings with Control Sequences
 
 Many terminals will recognize special sequences of characters in strings and
 change display behavior as a result.  For example, on my terminal the sequence
@@ -79,6 +79,14 @@ with `sgr_to_html`:
 
 ![translate to html](https://raw.githubusercontent.com/brodieG/fansi/master/extra/images/sgr_to_html.png)
 
+## Rmarkdown
+
+It is possible to set `knitr` hooks such that R output that contains ANSI CSI
+SGR is automatically converted to the HTML formatted equivalent and displayed as
+intended.  See the
+[vignette](http://htmlpreview.github.io/?https://raw.githubusercontent.com/brodieG/fansi/6cbfdaa/inst/doc/sgr-in-rmd.html)
+for details.
+
 ## Installation
 
 This package is available on CRAN:
@@ -88,7 +96,7 @@ This package is available on CRAN:
 install.packages('fansi')
 ```
 
-It has no dependencies.
+It has no runtime dependencies.
 
 For the development version use:
 `devtools::install_github('brodieg/fansi@development')` or:
@@ -104,8 +112,8 @@ install.packages(file.path(f.uz, 'fansi-development'), repos=NULL, type='source'
 unlink(c(f.dl, f.uz))
 ```
 
-There is no guarantee that development versions are stable or even working, but
-you can check build status on Travis: [![](https://travis-ci.org/brodieG/fansi.svg?branch=development)](https://travis-ci.org/brodieG/fansi).
+There is no guarantee that development versions are stable or even working
+(Travis build status: [![](https://travis-ci.org/brodieG/fansi.svg?branch=development)](https://travis-ci.org/brodieG/fansi)).  The master branch typically mirrors CRAN and should be stable.
 
 ## Related Packages and References
 
